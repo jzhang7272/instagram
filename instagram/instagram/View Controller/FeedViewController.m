@@ -17,6 +17,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *postArray;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
 
@@ -28,6 +29,11 @@
     self.tableView.dataSource = self;
     
     [self fetchPosts];
+    
+    // Refresh
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(fetchPosts) forControlEvents:UIControlEventValueChanged];
+    [self.tableView insertSubview:self.refreshControl atIndex:0];
 }
 
 - (void)fetchPosts {
@@ -44,6 +50,7 @@
             NSLog(@"%@", error.localizedDescription);
         }
     }];
+    [self.refreshControl endRefreshing];
 }
 - (IBAction)onLogOut:(id)sender {
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
