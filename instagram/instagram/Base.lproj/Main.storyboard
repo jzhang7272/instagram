@@ -73,7 +73,7 @@
             </objects>
             <point key="canvasLocation" x="139" y="106"/>
         </scene>
-        <!--Feed View Controller-->
+        <!--Home Feed-->
         <scene sceneID="oeG-yn-omb">
             <objects>
                 <viewController storyboardIdentifier="FeedViewController" id="Jb4-vg-ceD" customClass="FeedViewController" sceneMemberID="viewController">
@@ -92,10 +92,15 @@
                         <viewLayoutGuide key="safeArea" id="8o2-y5-z3f"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="2jn-Ls-tTI">
+                    <navigationItem key="navigationItem" title="Home Feed" id="2jn-Ls-tTI">
                         <barButtonItem key="leftBarButtonItem" title="Log Out" id="ol5-2D-GJ6">
                             <connections>
                                 <action selector="onLogOut:" destination="Jb4-vg-ceD" id="xIB-AA-FSu"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="insta_camera_btn" id="H9f-yg-T9J">
+                            <connections>
+                                <segue destination="8z2-dF-Ke3" kind="presentation" id="Bks-Fw-WD7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -103,6 +108,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cBs-1r-ePD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1889.8550724637682" y="105.80357142857143"/>
+        </scene>
+        <!--New Post-->
+        <scene sceneID="nfM-pI-JoO">
+            <objects>
+                <viewController id="EN0-K8-Lxd" customClass="PostViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fxx-sg-4Uf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JkS-sy-pjJ">
+                                <rect key="frame" x="10" y="101" width="111" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7OI-1z-oMr">
+                                <rect key="frame" x="129" y="101" width="265" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="01Z-ps-dZR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Post" id="BGk-oq-0wB">
+                        <barButtonItem key="leftBarButtonItem" image="xmark" catalog="system" id="UvH-mQ-D6J">
+                            <connections>
+                                <action selector="closePost:" destination="EN0-K8-Lxd" id="0YY-w0-qkE"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="qrS-vJ-ZEm">
+                            <connections>
+                                <action selector="sharePost:" destination="EN0-K8-Lxd" id="CRx-65-uRv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="photoView" destination="JkS-sy-pjJ" id="c83-R3-wU1"/>
+                        <outlet property="postText" destination="7OI-1z-oMr" id="5fz-XQ-OoN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hZI-n0-Qgs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1889.8550724637682" y="833.70535714285711"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2hr-MO-p9b">
@@ -122,10 +174,36 @@
             </objects>
             <point key="canvasLocation" x="979.71014492753636" y="105.80357142857143"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bYy-0F-BtN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="8z2-dF-Ke3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="E0f-QM-iSh">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EN0-K8-Lxd" kind="relationship" relationship="rootViewController" id="l7M-lL-Iqy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bwU-se-Pgo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="980" y="834"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="insta_camera_btn" width="25" height="25"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

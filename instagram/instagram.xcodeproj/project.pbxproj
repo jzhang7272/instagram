@@ -20,6 +20,8 @@
 		ED291AF82694A83900FD7504 /* instagramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED291AF72694A83900FD7504 /* instagramUITests.m */; };
 		ED291B0E2694EB6600FD7504 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED291B0D2694EB6500FD7504 /* LoginViewController.m */; };
 		ED291B112694EE3C00FD7504 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED291B102694EE3C00FD7504 /* FeedViewController.m */; };
+		ED291B142694FB3700FD7504 /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED291B132694FB3700FD7504 /* PostViewController.m */; };
+		ED291B1A269504D300FD7504 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = ED291B19269504D300FD7504 /* Post.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,10 @@
 		ED291B0D2694EB6500FD7504 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		ED291B0F2694EE3C00FD7504 /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
 		ED291B102694EE3C00FD7504 /* FeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
+		ED291B122694FB3600FD7504 /* PostViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostViewController.h; sourceTree = "<group>"; };
+		ED291B132694FB3700FD7504 /* PostViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostViewController.m; sourceTree = "<group>"; };
+		ED291B18269504D300FD7504 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		ED291B19269504D300FD7504 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		F30AB287C7F89865D0E04A73 /* Pods-instagramTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagramTests.debug.xcconfig"; path = "Target Support Files/Pods-instagramTests/Pods-instagramTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,6 +182,10 @@
 				ED291B102694EE3C00FD7504 /* FeedViewController.m */,
 				ED291B0C2694EB6500FD7504 /* LoginViewController.h */,
 				ED291B0D2694EB6500FD7504 /* LoginViewController.m */,
+				ED291B122694FB3600FD7504 /* PostViewController.h */,
+				ED291B18269504D300FD7504 /* Post.h */,
+				ED291B19269504D300FD7504 /* Post.m */,
+				ED291B132694FB3700FD7504 /* PostViewController.m */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -429,9 +439,11 @@
 			files = (
 				ED291B0E2694EB6600FD7504 /* LoginViewController.m in Sources */,
 				ED291B112694EE3C00FD7504 /* FeedViewController.m in Sources */,
+				ED291B142694FB3700FD7504 /* PostViewController.m in Sources */,
 				ED291AD22694A83700FD7504 /* AppDelegate.m in Sources */,
 				ED291AE32694A83900FD7504 /* main.m in Sources */,
 				ED291AD52694A83700FD7504 /* SceneDelegate.m in Sources */,
+				ED291B1A269504D300FD7504 /* Post.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
