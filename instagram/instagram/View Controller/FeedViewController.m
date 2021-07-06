@@ -9,8 +9,11 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import <Parse/Parse.h>
+#import "PostCell.h"
 
-@interface FeedViewController ()
+@interface FeedViewController () <UITableViewDelegate, UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -26,7 +29,10 @@
             NSLog(@"User log out failed: %@", error.localizedDescription);
         } else {
             NSLog(@"User logged out successfully. PFUser.current() will now be nil.");
-            [self dismissViewControllerAnimated:YES completion:nil];
+            
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            LoginViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+            [self presentViewController:loginVC animated:TRUE completion:nil];
         }
     }];
 }
@@ -40,5 +46,15 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
+    
+    return cell;
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 20;
+}
 
 @end

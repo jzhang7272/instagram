@@ -22,6 +22,7 @@
 		ED291B112694EE3C00FD7504 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED291B102694EE3C00FD7504 /* FeedViewController.m */; };
 		ED291B142694FB3700FD7504 /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED291B132694FB3700FD7504 /* PostViewController.m */; };
 		ED291B1A269504D300FD7504 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = ED291B19269504D300FD7504 /* Post.m */; };
+		ED291B1D26950C5000FD7504 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED291B1C26950C5000FD7504 /* PostCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,8 @@
 		ED291B132694FB3700FD7504 /* PostViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostViewController.m; sourceTree = "<group>"; };
 		ED291B18269504D300FD7504 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		ED291B19269504D300FD7504 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		ED291B1B26950C5000FD7504 /* PostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
+		ED291B1C26950C5000FD7504 /* PostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
 		F30AB287C7F89865D0E04A73 /* Pods-instagramTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagramTests.debug.xcconfig"; path = "Target Support Files/Pods-instagramTests/Pods-instagramTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,12 +146,16 @@
 		ED291ACF2694A83700FD7504 /* instagram */ = {
 			isa = PBXGroup;
 			children = (
+				ED291B18269504D300FD7504 /* Post.h */,
+				ED291B19269504D300FD7504 /* Post.m */,
 				ED291B082694EAE900FD7504 /* View Controller */,
 				ED291AD02694A83700FD7504 /* AppDelegate.h */,
 				ED291AD12694A83700FD7504 /* AppDelegate.m */,
 				ED291AD32694A83700FD7504 /* SceneDelegate.h */,
 				ED291AD42694A83700FD7504 /* SceneDelegate.m */,
 				ED291AD92694A83700FD7504 /* Main.storyboard */,
+				ED291B1B26950C5000FD7504 /* PostCell.h */,
+				ED291B1C26950C5000FD7504 /* PostCell.m */,
 				ED291ADC2694A83900FD7504 /* Assets.xcassets */,
 				ED291ADE2694A83900FD7504 /* LaunchScreen.storyboard */,
 				ED291AE12694A83900FD7504 /* Info.plist */,
@@ -183,8 +190,6 @@
 				ED291B0C2694EB6500FD7504 /* LoginViewController.h */,
 				ED291B0D2694EB6500FD7504 /* LoginViewController.m */,
 				ED291B122694FB3600FD7504 /* PostViewController.h */,
-				ED291B18269504D300FD7504 /* Post.h */,
-				ED291B19269504D300FD7504 /* Post.m */,
 				ED291B132694FB3700FD7504 /* PostViewController.m */,
 			);
 			path = "View Controller";
@@ -440,6 +445,7 @@
 				ED291B0E2694EB6600FD7504 /* LoginViewController.m in Sources */,
 				ED291B112694EE3C00FD7504 /* FeedViewController.m in Sources */,
 				ED291B142694FB3700FD7504 /* PostViewController.m in Sources */,
+				ED291B1D26950C5000FD7504 /* PostCell.m in Sources */,
 				ED291AD22694A83700FD7504 /* AppDelegate.m in Sources */,
 				ED291AE32694A83900FD7504 /* main.m in Sources */,
 				ED291AD52694A83700FD7504 /* SceneDelegate.m in Sources */,
