@@ -1,16 +1,18 @@
 //
-//  PostCell.h
+//  PostDetailsCell.h
 //  instagram
 //
-//  Created by Josey Zhang on 7/6/21.
+//  Created by Josey Zhang on 7/7/21.
 //
 
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PostCell : UITableViewCell
+@interface PostDetailsCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timestampLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *photoView;
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
 @property (weak, nonatomic) IBOutlet UIButton *commentButton;

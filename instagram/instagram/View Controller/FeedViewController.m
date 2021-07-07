@@ -12,6 +12,7 @@
 #import "PostCell.h"
 #import "Post.h"
 #import "UIImageView+AFNetworking.h"
+#import "PostDetailsViewController.h"
 
 @interface FeedViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -74,8 +75,8 @@
     cell.usernameLabel.text = post.author.username;
     NSURL *imageURL = [NSURL URLWithString:post.image.url];
     [cell.photoView setImageWithURL:imageURL];
-    cell.likeCountLabel.text = [NSString stringWithFormat:@"%@ likes", post.likeCount];
-    cell.captionLabel.text = post.caption;
+//    cell.likeCountLabel.text = [NSString stringWithFormat:@"%@ likes", post.likeCount];
+//    cell.captionLabel.text = post.caption;
     
     return cell;
 }
@@ -84,14 +85,18 @@
     return self.postArray.count;
 }
 
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if([[segue identifier] isEqualToString:@"detailsSegue"]) {
+        UITableViewCell *tappedCell = sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+        Post *post = self.postArray[indexPath.row];
+        PostDetailsViewController *detailsViewController = [segue destinationViewController];
+        detailsViewController.post = post;
+    }
 }
-*/
+
 
 @end

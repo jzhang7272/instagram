@@ -8,9 +8,9 @@
 #import "PostViewController.h"
 #import "Post.h"
 
-const int resize = 100;
+const int resize = 275;
 
-@interface PostViewController ()
+@interface PostViewController () <UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *photoView;
 @property (strong, nonatomic) UIImagePickerController *imagePickerVC;
 @property (weak, nonatomic) IBOutlet UITextView *postText;
@@ -21,6 +21,9 @@ const int resize = 100;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.postText.delegate = self;
+    self.postText.text = @"Add a caption!";
+    self.postText.textColor = [UIColor lightGrayColor];
     
     self.imagePickerVC = [UIImagePickerController new];
     self.imagePickerVC.delegate = self;
@@ -34,9 +37,9 @@ const int resize = 100;
     }
     
     // User taps on photo to upload photo
-    UITapGestureRecognizer *profileTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(uploadTakePhoto:)];
-    [self.view addGestureRecognizer:profileTapGestureRecognizer];
-    [self.view setUserInteractionEnabled:YES];
+    UITapGestureRecognizer *photoTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(uploadTakePhoto:)];
+    [self.photoView addGestureRecognizer:photoTapGestureRecognizer];
+    [self.photoView setUserInteractionEnabled:YES];
 }
 
 - (void)uploadTakePhoto:(UITapGestureRecognizer *)sender{
@@ -51,6 +54,22 @@ const int resize = 100;
     self.photoView.image = (editedImage != nil) ? editedImage : originalImage;
     
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)textViewDidBeginEditing:(UITextView *)textView {
+    if ([textView.text isEqualToString:@"Add a caption!"]) {
+         textView.text = @"";
+         textView.textColor = [UIColor blackColor];
+    }
+    [textView becomeFirstResponder];
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView {
+    if ([textView.text isEqualToString:@""]) {
+        textView.text = @"Add a caption!";
+        textView.textColor = [UIColor lightGrayColor];
+    }
+    [textView resignFirstResponder];
 }
 
 - (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
