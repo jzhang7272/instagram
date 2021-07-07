@@ -8,7 +8,7 @@
 #import "PostViewController.h"
 #import "Post.h"
 
-const int resize = 275;
+const int resize = 350;
 
 @interface PostViewController () <UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *photoView;

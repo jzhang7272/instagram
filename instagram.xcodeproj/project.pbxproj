@@ -25,6 +25,9 @@
 		ED291B1D26950C5000FD7504 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED291B1C26950C5000FD7504 /* PostCell.m */; };
 		EDFF22202696183E00862BD5 /* PostDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDFF221F2696183E00862BD5 /* PostDetailsViewController.m */; };
 		EDFF22232696187100862BD5 /* PostDetailsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDFF22222696187100862BD5 /* PostDetailsCell.m */; };
+		EDFF222A269642EC00862BD5 /* billabong.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDFF22292696429400862BD5 /* billabong.ttf */; };
+		EDFF222B269642EC00862BD5 /* billabong.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDFF22292696429400862BD5 /* billabong.ttf */; };
+		EDFF222C269642ED00862BD5 /* billabong.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDFF22292696429400862BD5 /* billabong.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +86,7 @@
 		EDFF221F2696183E00862BD5 /* PostDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostDetailsViewController.m; sourceTree = "<group>"; };
 		EDFF22212696187100862BD5 /* PostDetailsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostDetailsCell.h; sourceTree = "<group>"; };
 		EDFF22222696187100862BD5 /* PostDetailsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostDetailsCell.m; sourceTree = "<group>"; };
+		EDFF22292696429400862BD5 /* billabong.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = billabong.ttf; sourceTree = "<group>"; };
 		F30AB287C7F89865D0E04A73 /* Pods-instagramTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagramTests.debug.xcconfig"; path = "Target Support Files/Pods-instagramTests/Pods-instagramTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,6 +163,7 @@
 				ED291AD12694A83700FD7504 /* AppDelegate.m */,
 				ED291AD32694A83700FD7504 /* SceneDelegate.h */,
 				ED291AD42694A83700FD7504 /* SceneDelegate.m */,
+				EDFF22282696429000862BD5 /* Fonts */,
 				ED291AD92694A83700FD7504 /* Main.storyboard */,
 				EDFF221D2696173000862BD5 /* Views */,
 				ED291ADC2694A83900FD7504 /* Assets.xcassets */,
@@ -211,6 +216,14 @@
 				ED291B1C26950C5000FD7504 /* PostCell.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		EDFF22282696429000862BD5 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EDFF22292696429400862BD5 /* billabong.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		F10ADD399BE8605A74847FD6 /* Frameworks */ = {
@@ -330,6 +343,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDFF222A269642EC00862BD5 /* billabong.ttf in Resources */,
 				ED291AE02694A83900FD7504 /* LaunchScreen.storyboard in Resources */,
 				ED291ADD2694A83900FD7504 /* Assets.xcassets in Resources */,
 				ED291ADB2694A83700FD7504 /* Main.storyboard in Resources */,
@@ -340,6 +354,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDFF222B269642EC00862BD5 /* billabong.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +362,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDFF222C269642ED00862BD5 /* billabong.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

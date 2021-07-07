@@ -72,11 +72,11 @@
     Post *post = self.postArray[indexPath.row];
     
 //    [post fetchIfNeededInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
+    cell.post = post;
     cell.usernameLabel.text = post.author.username;
     NSURL *imageURL = [NSURL URLWithString:post.image.url];
     [cell.photoView setImageWithURL:imageURL];
-//    cell.likeCountLabel.text = [NSString stringWithFormat:@"%@ likes", post.likeCount];
-//    cell.captionLabel.text = post.caption;
+    post.liked == true ? [cell.likeButton setSelected:YES] : [cell.likeButton setSelected:NO];
     
     return cell;
 }
