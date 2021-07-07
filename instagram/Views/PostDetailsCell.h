@@ -6,8 +6,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Post.h"
+#import <Parse/Parse.h>
 
 NS_ASSUME_NONNULL_BEGIN
+
+//@protocol PostDetailsDelegate;
 
 @interface PostDetailsCell : UITableViewCell
 
@@ -20,6 +24,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *likeCountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *captionLabel;
 
+@property (strong, nonatomic) Post *post;
+
+//@property (nonatomic, weak) id<PostDetailsDelegate> delegate;
+
 @end
+
+//@protocol PostDetailsDelegate
+//- (void)updateFeed;
+//@end
 
 NS_ASSUME_NONNULL_END

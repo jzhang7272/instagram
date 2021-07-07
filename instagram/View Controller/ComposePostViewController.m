@@ -5,19 +5,19 @@
 //  Created by Josey Zhang on 7/6/21.
 //
 
-#import "PostViewController.h"
+#import "ComposePostViewController.h"
 #import "Post.h"
 
 const int resize = 350;
 
-@interface PostViewController () <UITextViewDelegate>
+@interface ComposePostViewController () <UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *photoView;
 @property (strong, nonatomic) UIImagePickerController *imagePickerVC;
 @property (weak, nonatomic) IBOutlet UITextView *postText;
 
 @end
 
-@implementation PostViewController
+@implementation ComposePostViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -31,12 +31,14 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     PostDetailsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostDetailsCell"];
     if (indexPath.row == 0){
+        cell.post = self.post;
         cell.usernameLabel.text = self.post.author.username;
         NSURL *imageURL = [NSURL URLWithString:self.post.image.url];
         [cell.photoView setImageWithURL:imageURL];
         cell.likeCountLabel.text = [NSString stringWithFormat:@"%@ likes", self.post.likeCount];
         cell.captionLabel.text = self.post.caption;
         cell.timestampLabel.text = [self getTimeStamp:self.post.createdAt];
+        (self.post.liked) ? [cell.likeButton setSelected:true] : [cell.likeButton setSelected:false];
     }
     return cell;
 }

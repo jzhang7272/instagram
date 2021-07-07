@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 const int resize;
 
-@interface PostViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface ComposePostViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @end
 

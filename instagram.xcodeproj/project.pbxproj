@@ -20,7 +20,7 @@
 		ED291AF82694A83900FD7504 /* instagramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED291AF72694A83900FD7504 /* instagramUITests.m */; };
 		ED291B0E2694EB6600FD7504 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED291B0D2694EB6500FD7504 /* LoginViewController.m */; };
 		ED291B112694EE3C00FD7504 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED291B102694EE3C00FD7504 /* FeedViewController.m */; };
-		ED291B142694FB3700FD7504 /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED291B132694FB3700FD7504 /* PostViewController.m */; };
+		ED291B142694FB3700FD7504 /* ComposePostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED291B132694FB3700FD7504 /* ComposePostViewController.m */; };
 		ED291B1A269504D300FD7504 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = ED291B19269504D300FD7504 /* Post.m */; };
 		ED291B1D26950C5000FD7504 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED291B1C26950C5000FD7504 /* PostCell.m */; };
 		EDFF22202696183E00862BD5 /* PostDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDFF221F2696183E00862BD5 /* PostDetailsViewController.m */; };
@@ -28,6 +28,9 @@
 		EDFF222A269642EC00862BD5 /* billabong.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDFF22292696429400862BD5 /* billabong.ttf */; };
 		EDFF222B269642EC00862BD5 /* billabong.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDFF22292696429400862BD5 /* billabong.ttf */; };
 		EDFF222C269642ED00862BD5 /* billabong.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDFF22292696429400862BD5 /* billabong.ttf */; };
+		EDFF222F269661D900862BD5 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDFF222E269661D900862BD5 /* ProfileViewController.m */; };
+		EDFF2232269662C300862BD5 /* ProfilePostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDFF2231269662C300862BD5 /* ProfilePostCell.m */; };
+		EDFF22352696698F00862BD5 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = EDFF22342696698F00862BD5 /* User.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,8 +79,8 @@
 		ED291B0D2694EB6500FD7504 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		ED291B0F2694EE3C00FD7504 /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
 		ED291B102694EE3C00FD7504 /* FeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
-		ED291B122694FB3600FD7504 /* PostViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostViewController.h; sourceTree = "<group>"; };
-		ED291B132694FB3700FD7504 /* PostViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostViewController.m; sourceTree = "<group>"; };
+		ED291B122694FB3600FD7504 /* ComposePostViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposePostViewController.h; sourceTree = "<group>"; };
+		ED291B132694FB3700FD7504 /* ComposePostViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposePostViewController.m; sourceTree = "<group>"; };
 		ED291B18269504D300FD7504 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		ED291B19269504D300FD7504 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		ED291B1B26950C5000FD7504 /* PostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
@@ -87,6 +90,12 @@
 		EDFF22212696187100862BD5 /* PostDetailsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostDetailsCell.h; sourceTree = "<group>"; };
 		EDFF22222696187100862BD5 /* PostDetailsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostDetailsCell.m; sourceTree = "<group>"; };
 		EDFF22292696429400862BD5 /* billabong.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = billabong.ttf; sourceTree = "<group>"; };
+		EDFF222D269661D900862BD5 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		EDFF222E269661D900862BD5 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		EDFF2230269662C300862BD5 /* ProfilePostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ProfilePostCell.h; path = instagram/Views/ProfilePostCell.h; sourceTree = SOURCE_ROOT; };
+		EDFF2231269662C300862BD5 /* ProfilePostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ProfilePostCell.m; path = instagram/Views/ProfilePostCell.m; sourceTree = SOURCE_ROOT; };
+		EDFF22332696698F00862BD5 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		EDFF22342696698F00862BD5 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		F30AB287C7F89865D0E04A73 /* Pods-instagramTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagramTests.debug.xcconfig"; path = "Target Support Files/Pods-instagramTests/Pods-instagramTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,6 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				ED291B18269504D300FD7504 /* Post.h */,
+				EDFF22332696698F00862BD5 /* User.h */,
+				EDFF22342696698F00862BD5 /* User.m */,
 				ED291B19269504D300FD7504 /* Post.m */,
 				ED291B082694EAE900FD7504 /* View Controller */,
 				ED291AD02694A83700FD7504 /* AppDelegate.h */,
@@ -201,8 +212,10 @@
 				EDFF221F2696183E00862BD5 /* PostDetailsViewController.m */,
 				ED291B0C2694EB6500FD7504 /* LoginViewController.h */,
 				ED291B0D2694EB6500FD7504 /* LoginViewController.m */,
-				ED291B122694FB3600FD7504 /* PostViewController.h */,
-				ED291B132694FB3700FD7504 /* PostViewController.m */,
+				ED291B122694FB3600FD7504 /* ComposePostViewController.h */,
+				ED291B132694FB3700FD7504 /* ComposePostViewController.m */,
+				EDFF222D269661D900862BD5 /* ProfileViewController.h */,
+				EDFF222E269661D900862BD5 /* ProfileViewController.m */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -210,6 +223,8 @@
 		EDFF221D2696173000862BD5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EDFF2230269662C300862BD5 /* ProfilePostCell.h */,
+				EDFF2231269662C300862BD5 /* ProfilePostCell.m */,
 				EDFF22212696187100862BD5 /* PostDetailsCell.h */,
 				EDFF22222696187100862BD5 /* PostDetailsCell.m */,
 				ED291B1B26950C5000FD7504 /* PostCell.h */,
@@ -476,16 +491,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDFF22352696698F00862BD5 /* User.m in Sources */,
 				EDFF22232696187100862BD5 /* PostDetailsCell.m in Sources */,
 				ED291B0E2694EB6600FD7504 /* LoginViewController.m in Sources */,
 				ED291B112694EE3C00FD7504 /* FeedViewController.m in Sources */,
-				ED291B142694FB3700FD7504 /* PostViewController.m in Sources */,
+				ED291B142694FB3700FD7504 /* ComposePostViewController.m in Sources */,
 				ED291B1D26950C5000FD7504 /* PostCell.m in Sources */,
 				ED291AD22694A83700FD7504 /* AppDelegate.m in Sources */,
 				ED291AE32694A83900FD7504 /* main.m in Sources */,
 				ED291AD52694A83700FD7504 /* SceneDelegate.m in Sources */,
+				EDFF222F269661D900862BD5 /* ProfileViewController.m in Sources */,
 				ED291B1A269504D300FD7504 /* Post.m in Sources */,
 				EDFF22202696183E00862BD5 /* PostDetailsViewController.m in Sources */,
+				EDFF2232269662C300862BD5 /* ProfilePostCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

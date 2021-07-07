@@ -7,6 +7,7 @@
 
 #import "LoginViewController.h"
 #import <Parse/Parse.h>
+#import "User.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
@@ -28,15 +29,6 @@
     self.gradientLayer.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithRed:76.0/255.0 green:104.0/255.0 blue:215.0/255.0 alpha:0.50] CGColor],(id)[[UIColor colorWithRed:138.0/255.0 green:58.0/255.0 blue:185.0/255.0 alpha:0.50] CGColor],(id)[[UIColor colorWithRed:205/255.0 green:72.0/255.0 blue:107/255.0 alpha:0.50] CGColor],(id)[[UIColor colorWithRed:252/255.0 green:204/255.0 blue:99/255.0 alpha:0.50] CGColor], nil];
     [self.view.layer insertSublayer:self.gradientLayer atIndex:0];
     
-//    UIView *gradientView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
-//    CAGradientLayer *gradient = [CAGradientLayer layer];
-//    gradient.frame = gradientView.bounds;
-//    gradient.colors = @[(id)[UIColor whiteColor].CGColor, (id)[UIColor blackColor].CGColor];
-//    gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithRed:34.0/255.0 green:211/255.0 blue:198/255.0 alpha:1.0] CGColor],(id)[[UIColor colorWithRed:145/255.0 green:72.0/255.0 blue:203/255.0 alpha:1.0] CGColor], nil];
-//    [gradientView.layer insertSublayer:gradient atIndex:1];
-//    if (PFUser.currentUser){
-//        [self performSegueWithIdentifier:@"loginSegue" sender:nil];
-//    }
 
 }
 - (IBAction)onLogIn:(id)sender {
@@ -73,8 +65,13 @@
             [alert addAction:okAction];
             [self presentViewController:alert animated:YES completion:nil];
         } else {
-            NSLog(@"User registered successfully");
-            
+            [User createUser:@"Add a bio!" withCompletion:^(BOOL succeeded, NSError * error) {
+                if (succeeded) {
+                    NSLog(@"User created.");
+                } else {
+                    NSLog(@"Problem creating user: %@", error.localizedDescription);
+                }
+            }];
         }
     }];
 }

@@ -13,6 +13,7 @@
 #import "Post.h"
 #import "UIImageView+AFNetworking.h"
 #import "PostDetailsViewController.h"
+#import "PostDetailsCell.h"
 
 @interface FeedViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -37,6 +38,11 @@
     [self.tableView insertSubview:self.refreshControl atIndex:0];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self fetchPosts];
+}
+
 - (void)fetchPosts {
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query orderByDescending:@"createdAt"];
@@ -53,6 +59,7 @@
     }];
     [self.refreshControl endRefreshing];
 }
+
 - (IBAction)onLogOut:(id)sender {
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
         if (error != nil) {
