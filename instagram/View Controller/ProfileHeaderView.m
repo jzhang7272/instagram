@@ -7,7 +7,6 @@
 
 #import "ProfileHeaderView.h"
 
-
 @implementation ProfileHeaderView
 
 @end

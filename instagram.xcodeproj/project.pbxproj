@@ -32,6 +32,7 @@
 		EDFF2232269662C300862BD5 /* ProfilePostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EDFF2231269662C300862BD5 /* ProfilePostCell.m */; };
 		EDFF22352696698F00862BD5 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = EDFF22342696698F00862BD5 /* User.m */; };
 		EDFF223A269766B900862BD5 /* ProfileHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = EDFF2239269766B900862BD5 /* ProfileHeaderView.m */; };
+		EDFF223D26978B7F00862BD5 /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDFF223C26978B7F00862BD5 /* EditProfileViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,8 @@
 		EDFF22342696698F00862BD5 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		EDFF2238269766B900862BD5 /* ProfileHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileHeaderView.h; sourceTree = "<group>"; };
 		EDFF2239269766B900862BD5 /* ProfileHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileHeaderView.m; sourceTree = "<group>"; };
+		EDFF223B26978B7F00862BD5 /* EditProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
+		EDFF223C26978B7F00862BD5 /* EditProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
 		F30AB287C7F89865D0E04A73 /* Pods-instagramTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagramTests.debug.xcconfig"; path = "Target Support Files/Pods-instagramTests/Pods-instagramTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -209,6 +212,8 @@
 		ED291B082694EAE900FD7504 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				EDFF223B26978B7F00862BD5 /* EditProfileViewController.h */,
+				EDFF223C26978B7F00862BD5 /* EditProfileViewController.m */,
 				EDFF2238269766B900862BD5 /* ProfileHeaderView.h */,
 				EDFF2239269766B900862BD5 /* ProfileHeaderView.m */,
 				ED291B0F2694EE3C00FD7504 /* FeedViewController.h */,
@@ -498,6 +503,7 @@
 			files = (
 				EDFF22352696698F00862BD5 /* User.m in Sources */,
 				EDFF22232696187100862BD5 /* PostDetailsCell.m in Sources */,
+				EDFF223D26978B7F00862BD5 /* EditProfileViewController.m in Sources */,
 				ED291B0E2694EB6600FD7504 /* LoginViewController.m in Sources */,
 				ED291B112694EE3C00FD7504 /* FeedViewController.m in Sources */,
 				ED291B142694FB3700FD7504 /* ComposePostViewController.m in Sources */,
