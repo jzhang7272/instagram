@@ -65,13 +65,7 @@
             [alert addAction:okAction];
             [self presentViewController:alert animated:YES completion:nil];
         } else {
-            [User createUser:@"Add a bio!" withCompletion:^(BOOL succeeded, NSError * error) {
-                if (succeeded) {
-                    NSLog(@"User created.");
-                } else {
-                    NSLog(@"Problem creating user: %@", error.localizedDescription);
-                }
-            }];
+            NSLog(@"User created.");
         }
     }];
 }

@@ -16,7 +16,9 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UIImageView *profilePictureView;
 @property (weak, nonatomic) IBOutlet UILabel *userLabel;
+@property (weak, nonatomic) IBOutlet UILabel *bioLabel;
 @property (strong, nonatomic) NSMutableArray *postArray;
+@property (strong, nonatomic) User *user;
 @end
 
 @implementation ProfileViewController
@@ -26,8 +28,9 @@
     
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
+    self.user = PFUser.currentUser;
     
-    [self fetchPosts];
+    [self fetchUser];
     
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *) self.collectionView.collectionViewLayout;
     layout.minimumLineSpacing = 5;
@@ -37,22 +40,25 @@
     CGFloat itemHeight = itemWidth;
     layout.itemSize = CGSizeMake(itemWidth, itemHeight);
     
-    self.profilePictureView.image = nil;
+    NSURL *imageURL = [NSURL URLWithString:self.user.image.url];
+    [self.profilePictureView setImageWithURL:imageURL];
+    self.userLabel.text = self.user.username;
+    self.bioLabel.text = self.user.bio;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self fetchPosts];
+    [self fetchUser];
 }
 
-- (void)fetchPosts {
-    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
-    [query whereKey:@"author" equalTo:PFUser.currentUser];
-    [query orderByDescending:@"createdAt"];
-    [query includeKey:@"author"];
-    query.limit = 20;
+- (void)fetchUser {
+    PFQuery *postQuery = [PFQuery queryWithClassName:@"Post"];
+    [postQuery whereKey:@"author" equalTo:PFUser.currentUser];
+    [postQuery orderByDescending:@"createdAt"];
+    [postQuery includeKey:@"author"];
+    postQuery.limit = 20;
 
-    [query findObjectsInBackgroundWithBlock:^(NSArray<Post *> *posts, NSError *error) {
+    [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> *posts, NSError *error) {
         if (posts != nil) {
             self.postArray = [posts copy];
             [self.collectionView reloadData];
@@ -60,6 +66,19 @@
             NSLog(@"%@", error.localizedDescription);
         }
     }];
+    
+//    PFQuery *userQuery = [PFQuery queryWithClassName:@"User"];
+//    [postQuery whereKey:@"author" equalTo:PFUser.currentUser];
+//    [userQuery includeKey:@"author"];
+//    userQuery.limit = 20;
+//
+//    [userQuery findObjectsInBackgroundWithBlock:^(NSArray<User *> *users, NSError *error) {
+//        if (users != nil) {
+//            self.user = users[0];
+//        } else {
+//            NSLog(@"%@", error.localizedDescription);
+//        }
+//    }];
 }
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {

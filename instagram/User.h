@@ -10,17 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface User : PFObject<PFSubclassing>
+@interface User : PFUser
 
-@property (nonatomic, strong) NSString *postID;
-@property (nonatomic, strong) NSString *userID;
-@property (nonatomic, strong) PFUser *author;
-
-@property (nonatomic, strong) NSString *biography;
+@property (nonatomic, strong) NSString *username;
+@property (nonatomic, strong) NSString *bio;
 @property (nonatomic, strong) PFFileObject *image;
-@property (nonatomic, strong) NSMutableArray *posts;
-
-+ (void) createUser: (NSString *_Nullable)bio withCompletion: (PFBooleanResultBlock  _Nullable)completion;
 
 + (void)setProfileImage:(User *)user :(UIImage *)image;
 

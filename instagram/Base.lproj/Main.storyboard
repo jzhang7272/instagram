@@ -483,9 +483,10 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xFf-Yy-IiN">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile_tab" translatesAutoresizingMaskIntoConstraints="NO" id="xFf-Yy-IiN">
                                 <rect key="frame" x="11" y="101" width="108" height="118"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ECA-0Y-rfI">
                                 <rect key="frame" x="127" y="101" width="42" height="21"/>
@@ -513,6 +514,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="bNc-gM-Yp0"/>
                     <connections>
+                        <outlet property="bioLabel" destination="PX5-50-N0e" id="uzG-d3-0WR"/>
                         <outlet property="collectionView" destination="ZCQ-qF-95N" id="HYI-o0-jlV"/>
                         <outlet property="profilePictureView" destination="xFf-Yy-IiN" id="tsz-AF-dgn"/>
                         <outlet property="userLabel" destination="ECA-0Y-rfI" id="TeG-C5-d4h"/>
