@@ -32,5 +32,53 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E213BC8F-7BA4-4149-929E-56F5D8FE831A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "instagram/View Controller/ProfileViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "collectionView"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "E213BC8F-7BA4-4149-929E-56F5D8FE831A - ee4eaecc65864918"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ProfileViewController collectionView]"
+                  moduleName = "instagram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jzhang7/Desktop/instagram/instagram/View%20Controller/ProfileViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "E213BC8F-7BA4-4149-929E-56F5D8FE831A - 45f87e40991d4cf6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ProfileViewController setCollectionView:]"
+                  moduleName = "instagram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jzhang7/Desktop/instagram/instagram/View%20Controller/ProfileViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "49">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

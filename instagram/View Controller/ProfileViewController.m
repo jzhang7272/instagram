@@ -11,12 +11,16 @@
 #import "Post.h"
 #import "User.h"
 #import "UIImageView+AFNetworking.h"
+#import <QuartzCore/QuartzCore.h>
+#import "ProfileHeaderView.h"
+
+const int ROUNDED_RADIUS = 10;
+const int SPACING = 5;
+const CGFloat POSTS_PER_ROW = 3;
+const int QUERY = 20;
 
 @interface ProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (weak, nonatomic) IBOutlet UIImageView *profilePictureView;
-@property (weak, nonatomic) IBOutlet UILabel *userLabel;
-@property (weak, nonatomic) IBOutlet UILabel *bioLabel;
 @property (strong, nonatomic) NSMutableArray *postArray;
 @property (strong, nonatomic) User *user;
 @end
@@ -33,17 +37,12 @@
     [self fetchUser];
     
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *) self.collectionView.collectionViewLayout;
-    layout.minimumLineSpacing = 5;
-    layout.minimumInteritemSpacing = 5;
-    CGFloat postsPerRow = 3;
-    CGFloat itemWidth = (self.collectionView.frame.size.width - layout.minimumInteritemSpacing * (postsPerRow - 1)) / postsPerRow;
+    layout.headerReferenceSize = CGSizeMake(0, 150);
+    layout.minimumLineSpacing = SPACING;
+    layout.minimumInteritemSpacing = SPACING;
+    CGFloat itemWidth = (self.collectionView.frame.size.width - layout.minimumInteritemSpacing * (POSTS_PER_ROW - 1)) / POSTS_PER_ROW;
     CGFloat itemHeight = itemWidth;
     layout.itemSize = CGSizeMake(itemWidth, itemHeight);
-    
-    NSURL *imageURL = [NSURL URLWithString:self.user.image.url];
-    [self.profilePictureView setImageWithURL:imageURL];
-    self.userLabel.text = self.user.username;
-    self.bioLabel.text = self.user.bio;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -56,7 +55,7 @@
     [postQuery whereKey:@"author" equalTo:PFUser.currentUser];
     [postQuery orderByDescending:@"createdAt"];
     [postQuery includeKey:@"author"];
-    postQuery.limit = 20;
+    postQuery.limit = QUERY;
 
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> *posts, NSError *error) {
         if (posts != nil) {
@@ -66,19 +65,6 @@
             NSLog(@"%@", error.localizedDescription);
         }
     }];
-    
-//    PFQuery *userQuery = [PFQuery queryWithClassName:@"User"];
-//    [postQuery whereKey:@"author" equalTo:PFUser.currentUser];
-//    [userQuery includeKey:@"author"];
-//    userQuery.limit = 20;
-//
-//    [userQuery findObjectsInBackgroundWithBlock:^(NSArray<User *> *users, NSError *error) {
-//        if (users != nil) {
-//            self.user = users[0];
-//        } else {
-//            NSLog(@"%@", error.localizedDescription);
-//        }
-//    }];
 }
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
@@ -92,6 +78,25 @@
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.postArray.count;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+    UICollectionReusableView *reusableview = nil;
+    if (kind == UICollectionElementKindSectionHeader) {
+        ProfileHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView" forIndexPath:indexPath];
+        headerView.addProfileButton.layer.cornerRadius = ROUNDED_RADIUS;
+        headerView.addProfileButton.clipsToBounds = YES;
+        
+        NSURL *imageURL = [NSURL URLWithString:self.user.image.url];
+        if (imageURL != nil){
+            [headerView.profilePictureView setImageWithURL:imageURL];
+        }
+        headerView.userLabel.text = self.user.username;
+        headerView.bioLabel.text = self.user.bio;
+        
+        reusableview = headerView;
+    }
+    return reusableview;
 }
 
 /*
