@@ -26,12 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) Post *post;
 
-//@property (nonatomic, weak) id<PostDetailsDelegate> delegate;
 
 @end
-
-//@protocol PostDetailsDelegate
-//- (void)updateFeed;
-//@end
 
 NS_ASSUME_NONNULL_END

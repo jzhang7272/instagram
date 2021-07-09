@@ -8,7 +8,7 @@
 #import "ComposePostViewController.h"
 #import "Post.h"
 
-const int resize = 350;
+const int RESIZE = 350;
 
 @interface ComposePostViewController () <UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *photoView;
@@ -91,7 +91,7 @@ const int resize = 350;
 }
 
 - (IBAction)sharePost:(id)sender {
-    [Post postUserImage:[self resizeImage:self.photoView.image withSize:CGSizeMake(resize, resize)] withCaption:self.postText.text withCompletion:^(BOOL succeeded, NSError * error) {
+    [Post postUserImage:[self resizeImage:self.photoView.image withSize:CGSizeMake(RESIZE, RESIZE)] withCaption:self.postText.text withCompletion:^(BOOL succeeded, NSError * error) {
         if (succeeded) {
             NSLog(@"The post was saved.");
         } else {
@@ -102,14 +102,5 @@ const int resize = 350;
     [self dismissViewControllerAnimated:true completion:nil];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -40,7 +40,6 @@ const float HEADER_SPACING = 8 + 15 + 5 + 10;
     [self fetchUser];
     
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *) self.collectionView.collectionViewLayout;
-//    layout.headerReferenceSize = CGSizeMake(0, 150);
     layout.minimumLineSpacing = SPACING;
     layout.minimumInteritemSpacing = SPACING;
     CGFloat itemWidth = (self.collectionView.frame.size.width - layout.minimumInteritemSpacing * (POSTS_PER_ROW - 1)) / POSTS_PER_ROW;

@@ -11,7 +11,6 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
 }
 - (IBAction)onTapLike:(id)sender {
     if ([self.post.likesArray containsObject:PFUser.currentUser.objectId]){
@@ -36,7 +35,6 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
 }
 
 @end

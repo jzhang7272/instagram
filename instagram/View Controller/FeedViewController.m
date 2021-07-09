@@ -15,6 +15,8 @@
 #import "PostDetailsViewController.h"
 #import "PostDetailsCell.h"
 
+const int QUERIES = 20;
+
 @interface FeedViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -47,7 +49,7 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query orderByDescending:@"createdAt"];
     [query includeKey:@"author"];
-    query.limit = 20;
+    query.limit = QUERIES;
 
     [query findObjectsInBackgroundWithBlock:^(NSArray<Post *> *posts, NSError *error) {
         if (posts != nil) {
@@ -78,7 +80,6 @@
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
     Post *post = self.postArray[indexPath.row];
     
-//    [post fetchIfNeededInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
     cell.post = post;
     cell.usernameLabel.text = post.author.username;
     NSURL *imageURL = [NSURL URLWithString:post.image.url];
