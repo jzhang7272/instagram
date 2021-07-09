@@ -90,12 +90,15 @@ const int RADIUS = 15;
 }
 
 - (IBAction)onTapSave:(id)sender {
-    if ([self.bioText.text isEqualToString:@""] == false){
+//    NSLog(@"%d", [self.bioText.text isEqualToString:@"Change your bio!"]);
+    if ([self.bioText.text isEqualToString:@""] == false && [self.bioText.text isEqualToString:@"Change your bio!"] == false){
         self.user.bio = self.bioText.text;
     }
     if (self.photoView.image != nil) {
         [User setProfileImage:self.user :self.photoView.image];
     }
+    NSLog(@"%@", self.user.image);
+    [self.delegate didUpdate:self.user :self.photoView];
     [self.user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
         if (succeeded) {
             NSLog(@"User information updated.");

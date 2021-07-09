@@ -13,6 +13,7 @@
 #import "UIImageView+AFNetworking.h"
 #import <QuartzCore/QuartzCore.h>
 #import "ProfileHeaderView.h"
+#import "EditProfileViewController.h"
 
 const int ROUNDED_RADIUS = 10;
 const int SPACING = 5;
@@ -20,11 +21,11 @@ const CGFloat POSTS_PER_ROW = 3;
 const int QUERY = 20;
 const float HEADER_SPACING = 8 + 15 + 5 + 10;
 
-@interface ProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface ProfileViewController () <UIPageViewControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) NSMutableArray *postArray;
 @property (strong, nonatomic) User *user;
-@property (nonatomic) CGSize headerSize;
+@property (strong, nonatomic) UIImageView *tempimage;
 @end
 
 @implementation ProfileViewController
@@ -46,26 +47,17 @@ const float HEADER_SPACING = 8 + 15 + 5 + 10;
     CGFloat itemHeight = itemWidth;
     layout.itemSize = CGSizeMake(itemWidth, itemHeight);
 }
-/*
-- (CGSize)collectionView:(UICollectionView *)collectionView
-                  layout:(UICollectionViewLayout *)collectionViewLayout
-referenceSizeForHeaderInSection:(NSInteger)section{
-    // Get the view for the first header
-//    indexPath = IndexPath(row: 0, section: section);
-    NSIndexPath *indexpath = [NSIndexPath indexPathForRow:0 inSection:section];
-//    let headerView = self.collectionView(collectionView, viewForSupplementaryElementOfKind: UICollectionView.elementKindSectionHeader, at: indexPath);
-    ProfileHeaderView *headerView = [self.collectionView supplementaryViewForElementKind:UICollectionView. atIndexPath:<#(nonnull NSIndexPath *)#>
-//
-//    // Use this view to calculate the optimal size based on the collection view's width
-//    return headerView.systemLayoutSizeFitting(CGSize(width: collectionView.frame.width, height: UIView.layoutFittingExpandedSize.height),
-//                                              withHorizontalFittingPriority: .required, // Width is fixed
-//                                              verticalFittingPriority: .fittingSizeLevel) // Height can be as large as needed
-}
-*/
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self fetchUser];
+}
+
+- (void)didUpdate:(User *)user :(UIImageView *)image{
+    self.user = user;
+    self.tempimage = image;
+    [self.collectionView reloadSections:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 1)]];
+
 }
 
 - (void)fetchUser {
@@ -112,16 +104,14 @@ referenceSizeForHeaderInSection:(NSInteger)section{
         NSURL *imageURL = [NSURL URLWithString:self.user.image.url];
         if (imageURL != nil){
             [headerView.profilePictureView setImageWithURL:imageURL];
-            headerView.profilePictureView.layer.cornerRadius = headerView.profilePictureView.frame.size.width / 2;;
-            headerView.profilePictureView.layer.masksToBounds = YES;
         }
+        if (self.tempimage != nil){
+            headerView.profilePictureView.image = self.tempimage.image;
+        }
+        headerView.profilePictureView.layer.cornerRadius = headerView.profilePictureView.frame.size.width / 2;;
+        headerView.profilePictureView.layer.masksToBounds = YES;
         headerView.userLabel.text = self.user.username;
         headerView.bioLabel.text = self.user.bio;
-        
-        int height = headerView.userLabel.frame.size.height + headerView.bioLabel.frame.size.height + headerView.editButton.frame.size.height + HEADER_SPACING;
-//        NSLog(@"hi");
-//        NSLog(@"height: %i", height);
-        self.headerSize = CGSizeMake(0, height);
         
         reusableview = headerView;
     }
@@ -136,10 +126,13 @@ referenceSizeForHeaderInSection:(NSInteger)section{
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"editSegue"]) {
+        UINavigationController *navigationController = [segue destinationViewController];
+        EditProfileViewController *editController = (EditProfileViewController*)navigationController.topViewController;
+        editController.delegate = self;
+    }
 }
 
 

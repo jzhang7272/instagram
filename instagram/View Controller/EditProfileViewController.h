@@ -6,10 +6,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol EditProfileViewControllerDelegate
+
+- (void)didUpdate:(User *)user :(UIImageView *)image;
+
+@end
+
 @interface EditProfileViewController : UIViewController
+
+@property (nonatomic, weak) id<EditProfileViewControllerDelegate> delegate;
 
 @end
 
