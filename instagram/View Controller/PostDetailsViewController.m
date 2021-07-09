@@ -38,7 +38,7 @@
         cell.likeCountLabel.text = [NSString stringWithFormat:@"%@ likes", self.post.likeCount];
         cell.captionLabel.text = self.post.caption;
         cell.timestampLabel.text = [self getTimeStamp:self.post.createdAt];
-        (self.post.liked) ? [cell.likeButton setSelected:true] : [cell.likeButton setSelected:false];
+        ([self.post.likesArray containsObject:PFUser.currentUser.objectId] == true) ? [cell.likeButton setSelected:true] : [cell.likeButton setSelected:false];
     }
     return cell;
 }

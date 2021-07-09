@@ -14,14 +14,14 @@
     // Initialization code
 }
 - (IBAction)onTapLike:(id)sender {
-    if (self.post.liked){
+    if ([self.post.likesArray containsObject:PFUser.currentUser.objectId]){
         [self.likeButton setSelected:NO];
-        self.post.liked = false;
+        [self.post removeObject:PFUser.currentUser.objectId forKey:@"likesArray"];
         self.post.likeCount = [NSNumber numberWithInt:([self.post.likeCount intValue] - 1)];
     }
     else{
         [self.likeButton setSelected:YES];
-        self.post.liked = true;
+        [self.post addObject:PFUser.currentUser.objectId forKey:@"likesArray"];
         self.post.likeCount = [NSNumber numberWithInt:([self.post.likeCount intValue] + 1)];
     }
     self.likeCountLabel.text = [NSString stringWithFormat:@"%@ likes", self.post.likeCount];

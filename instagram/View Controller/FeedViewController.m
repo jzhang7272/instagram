@@ -83,8 +83,7 @@
     cell.usernameLabel.text = post.author.username;
     NSURL *imageURL = [NSURL URLWithString:post.image.url];
     [cell.photoView setImageWithURL:imageURL];
-    post.liked == true ? [cell.likeButton setSelected:YES] : [cell.likeButton setSelected:NO];
-    
+    [post.likesArray containsObject:PFUser.currentUser.objectId] == true ? [cell.likeButton setSelected:YES] : [cell.likeButton setSelected:NO];
     return cell;
 }
 

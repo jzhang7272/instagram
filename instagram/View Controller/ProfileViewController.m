@@ -46,13 +46,22 @@ const float HEADER_SPACING = 8 + 15 + 5 + 10;
     CGFloat itemHeight = itemWidth;
     layout.itemSize = CGSizeMake(itemWidth, itemHeight);
 }
-
+/*
 - (CGSize)collectionView:(UICollectionView *)collectionView
                   layout:(UICollectionViewLayout *)collectionViewLayout
 referenceSizeForHeaderInSection:(NSInteger)section{
-    self.headerSize = CGSizeMake(0, 150);
-    return self.headerSize;
+    // Get the view for the first header
+//    indexPath = IndexPath(row: 0, section: section);
+    NSIndexPath *indexpath = [NSIndexPath indexPathForRow:0 inSection:section];
+//    let headerView = self.collectionView(collectionView, viewForSupplementaryElementOfKind: UICollectionView.elementKindSectionHeader, at: indexPath);
+    ProfileHeaderView *headerView = [self.collectionView supplementaryViewForElementKind:UICollectionView. atIndexPath:<#(nonnull NSIndexPath *)#>
+//
+//    // Use this view to calculate the optimal size based on the collection view's width
+//    return headerView.systemLayoutSizeFitting(CGSize(width: collectionView.frame.width, height: UIView.layoutFittingExpandedSize.height),
+//                                              withHorizontalFittingPriority: .required, // Width is fixed
+//                                              verticalFittingPriority: .fittingSizeLevel) // Height can be as large as needed
 }
+*/
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -110,8 +119,8 @@ referenceSizeForHeaderInSection:(NSInteger)section{
         headerView.bioLabel.text = self.user.bio;
         
         int height = headerView.userLabel.frame.size.height + headerView.bioLabel.frame.size.height + headerView.editButton.frame.size.height + HEADER_SPACING;
-        NSLog(@"hi");
-        NSLog(@"height: %i", height);
+//        NSLog(@"hi");
+//        NSLog(@"height: %i", height);
         self.headerSize = CGSizeMake(0, height);
         
         reusableview = headerView;
